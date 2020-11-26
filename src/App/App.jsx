@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 
+import css from '../App/App.module.css';
+
 import ContactsList from "../ContactsList/ContactsList";
 import ContactForm from "../ContactForm/ContactForm";
 import Filter from "../Filter/Filter";
@@ -49,9 +51,9 @@ class App extends Component {
     const visibleContacts = this.getVisibleContacts()
     return (
       <>
-        <h1>Phonebook</h1>
+        <h1 className={css.title}>Phonebook</h1>
         <ContactForm onAddContact={this.addContact} />
-        <h2>Contacts</h2>
+        <h2 className={css.title}>Contacts</h2>
         <Filter value={filter} onChangeFilter={this.changeFilter} />
         {contacts.length > 0 && <ContactsList onRemoveContact={this.removeContact} contacts={visibleContacts} />}
       </>

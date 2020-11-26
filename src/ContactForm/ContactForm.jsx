@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
+import {v4 as uuid} from "uuid";
 
-import {v4 as uuid} from "uuid"
-
+import css from '../ContactForm/ContactFrom.module.css';
 class ContactForm extends Component {
   static propTypes = {
     onAddContact : PropTypes.func.isRequired
@@ -37,11 +37,11 @@ class ContactForm extends Component {
 
   render() {
     return (
-      <form className="PhoneBookForm" onSubmit={this.handleSubmit}>
+      <form className={css.PhoneBookForm} onSubmit={this.handleSubmit}>
         <label className="PhoneBookForm-label">
-          Name
+          <p>Name</p>
           <input
-            className="PhoneBookForm-input"
+            className={css.PhoneBookInput}
             name="name"
             type="text"
             value={this.state.name}
@@ -50,9 +50,9 @@ class ContactForm extends Component {
         </label>
 
         <label className="PhoneBookForm-label">
-          Number
+         <p>Number</p>
           <input
-            className="PhoneBookForm-input"
+            className={css.PhoneBookInput}
             name="number"
             type="tel"
             value={this.state.number}
